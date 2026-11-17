@@ -2,9 +2,17 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>ASES DEL NORTE | Bono de Bienvenida 20%</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estamos Cargando - Bono del 50%</title>
     
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Montserrat & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+
     <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -15,190 +23,159 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '986062427890106');
+    fbq('init', '29205874502378656');
     fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=986062427890106&ev=PageView&noscript=1"
+    src="https://www.facebook.com/tr?id=29205874502378656&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Montserrat & Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #050505;
-            color: #ffffff;
-            overflow-x: hidden;
-        }
-
-        .title-font {
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        /* Neon fluor text glow effects */
-        .neon-title {
-            text-shadow: 
-                0 0 7px #fff,
-                0 0 10px #fff,
-                0 0 21px #00ffcc,
-                0 0 42px #00ffcc,
-                0 0 82px #00ffcc;
-        }
-
-        .neon-gold {
-            text-shadow: 
-                0 0 5px #fff,
-                0 0 15px #ffea00,
-                0 0 30px #ff007f;
-        }
-
-        /* Pulsing green status dot */
-        .pulse-dot {
-            box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
-            animation: pulse-green 2s infinite;
-        }
-
-        @keyframes pulse-green {
-            0% {
-                transform: scale(0.95);
-                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
-            }
-            70% {
-                transform: scale(1);
-                box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
-            }
-            100% {
-                transform: scale(0.95);
-                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-glow': 'pulseGlow 2s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        pulseGlow: {
+                            '0%, 100%': { 
+                                transform: 'scale(1)',
+                                boxShadow: '0 0 20px rgba(34, 197, 94, 0.5), 0 0 40px rgba(34, 197, 94, 0.2)'
+                            },
+                            '50%': { 
+                                transform: 'scale(1.03)',
+                                boxShadow: '0 0 30px rgba(34, 197, 94, 0.8), 0 0 60px rgba(34, 197, 94, 0.4)'
+                            },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
             }
         }
-
-        /* Background Poker Floating Symbols */
-        .poker-bg {
-            position: absolute;
-            inset: 0;
-            overflow: hidden;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .poker-symbol {
-            position: absolute;
-            opacity: 0.25;
-            filter: drop-shadow(0 0 10px currentColor);
-            animation: float 14s infinite ease-in-out;
-            user-select: none;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg) scale(1);
-            }
-            50% {
-                transform: translateY(-25px) rotate(15deg) scale(1.1);
-            }
-        }
-
-        /* Fluor Colors */
-        .color-pink { color: #ff007f; }
-        .color-cyan { color: #00f0ff; }
-        .color-green { color: #39ff14; }
-        .color-yellow { color: #ffe600; }
-        .color-purple { color: #b026ff; }
-
-        /* Banner styling */
-        .banner-glow {
-            background: linear-gradient(135deg, rgba(255, 0, 127, 0.2) 0%, rgba(0, 240, 255, 0.2) 100%);
-            border: 2px solid #00f0ff;
-            box-shadow: 0 0 20px rgba(0, 240, 255, 0.4), inset 0 0 15px rgba(255, 0, 127, 0.3);
-        }
-
-        /* WhatsApp Button styling */
-        .btn-whatsapp {
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-            box-shadow: 0 0 25px rgba(37, 211, 102, 0.6);
-            transition: all 0.3s ease;
-        }
-
-        .btn-whatsapp:active {
-            transform: scale(0.97);
-            box-shadow: 0 0 15px rgba(37, 211, 102, 0.8);
-        }
-    </style>
+    </script>
 </head>
-<body class="min-h-screen flex items-center justify-center p-4 relative">
+<body class="bg-[#09090b] text-white min-h-screen flex flex-col justify-between relative overflow-x-hidden selection:bg-emerald-500 selection:text-white">
 
-    <!-- Poker Background Floating Fluor Symbols -->
-    <div class="poker-bg">
-        <span class="poker-symbol color-pink text-6xl top-[5%] left-[8%]" style="animation-delay: 0s;">♠</span>
-        <span class="poker-symbol color-cyan text-7xl top-[18%] right-[10%]" style="animation-delay: 2s;">♥</span>
-        <span class="poker-symbol color-yellow text-5xl top-[40%] left-[5%]" style="animation-delay: 4s;">♦</span>
-        <span class="poker-symbol color-green text-6xl top-[58%] right-[8%]" style="animation-delay: 1s;">♣</span>
-        <span class="poker-symbol color-purple text-7xl top-[78%] left-[12%]" style="animation-delay: 3s;">♠</span>
-        <span class="poker-symbol color-pink text-5xl bottom-[5%] right-[15%]" style="animation-delay: 5s;">♦</span>
-        <span class="poker-symbol color-cyan text-4xl top-[30%] left-[45%]" style="animation-delay: 2.5s;">♣</span>
+    <!-- Efectos visuales de fondo (Luces ambientales) -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div class="absolute top-[-15%] left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-amber-500/15 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-[-15%] left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-emerald-500/15 rounded-full blur-[120px]"></div>
+        <!-- Trama sutil -->
+        <div class="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:20px_20px]"></div>
     </div>
 
-    <!-- Container Formato Celular -->
-    <main class="w-full max-w-md mx-auto relative z-10 flex flex-col items-center text-center py-6 px-4">
+    <!-- Espaciador superior -->
+    <div class="h-6"></div>
+
+    <!-- Contenedor Principal Centrado -->
+    <main class="relative z-10 w-full max-w-lg mx-auto px-5 py-8 flex flex-col items-center text-center">
         
-        <!-- Icon/Header visual decorative elements -->
-        <div class="flex justify-center items-center space-x-3 mb-2 text-2xl font-bold">
-            <span class="color-pink drop-shadow-[0_0_8px_#ff007f]">♠</span>
-            <span class="color-cyan drop-shadow-[0_0_8px_#00f0ff]">♥</span>
-            <span class="color-yellow drop-shadow-[0_0_8px_#ffe600]">♦</span>
-            <span class="color-green drop-shadow-[0_0_8px_#39ff14]">♣</span>
+        <!-- Indicador de estado en vivo -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-900/90 border border-zinc-800 shadow-lg mb-6 backdrop-blur-md">
+            <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            </span>
+            <span class="text-xs font-semibold tracking-wider text-zinc-300 uppercase">Atención 24/7 Activa</span>
         </div>
 
-        <!-- Main Title -->
-        <h1 class="title-font text-4xl sm:text-5xl font-extrabold tracking-wider text-white neon-title mb-4 uppercase">
-            ASES DEL NORTE
-        </h1>
-
-        <!-- WhatsApp Online Status Badge -->
-        <div class="inline-flex items-center bg-black/70 border border-green-500/40 rounded-full px-4 py-1.5 mb-8 backdrop-blur-md">
-            <span class="w-3 h-3 bg-green-500 rounded-full pulse-dot mr-2.5"></span>
-            <span class="text-sm font-semibold text-green-400 tracking-wide">En línea</span>
-        </div>
-
-        <!-- Banner / Cartel Bono de Bienvenida -->
-        <div class="w-full banner-glow rounded-2xl p-5 mb-8 relative overflow-hidden backdrop-blur-sm">
-            <div class="absolute -top-10 -left-10 w-24 h-24 bg-pink-500/20 rounded-full blur-xl"></div>
-            <div class="absolute -bottom-10 -right-10 w-24 h-24 bg-cyan-500/20 rounded-full blur-xl"></div>
+        <!-- Tarjeta / Contenedor Hero -->
+        <div class="w-full bg-zinc-900/60 border border-zinc-800/80 rounded-3xl p-6 sm:p-10 backdrop-blur-xl shadow-2xl">
             
-            <p class="text-xs uppercase tracking-widest text-cyan-300 font-bold mb-1">Promoción Exclusiva</p>
-            <h2 class="title-font text-2xl sm:text-3xl font-black text-yellow-300 neon-gold leading-tight">
-                BONO DE BIENVENIDA 20%
-            </h2>
+            <!-- 1. TÍTULO PRINCIPAL -->
+            <h1 class="font-display font-black text-4xl sm:text-5xl md:text-6xl tracking-tight text-white uppercase leading-[1.05] drop-shadow-md">
+                ESTAMOS CARGANDO
+            </h1>
+
+            <!-- 2. SUBTÍTULO: BONO DEL 50% -->
+            <div class="mt-4 mb-8 inline-block">
+                <div class="bg-gradient-to-r from-amber-500/20 via-yellow-400/20 to-amber-500/20 border border-amber-400/40 rounded-2xl px-6 py-2.5 shadow-inner">
+                    <p class="font-display font-extrabold text-2xl sm:text-3xl tracking-wide bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 bg-clip-text text-transparent uppercase">
+                        BONO DEL 50%
+                    </p>
+                </div>
+            </div>
+
+            <!-- 3. BOTÓN DE WHATSAPP -->
+            <div class="w-full my-2">
+                <a id="whatsapp-cta"
+                   href="https://wa.me/5491161137296?text=Hola!%20Quiero%20crear%20mi%20usuario%20y%20pedir%20mi%20bono%20del%2050%25"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   onclick="trackWhatsAppClick()"
+                   class="animate-pulse-glow group w-full flex items-center justify-center gap-3.5 bg-gradient-to-b from-[#25D366] to-[#1da851] hover:from-[#2be06e] hover:to-[#20b858] text-white font-display font-black text-xl sm:text-2xl py-5 px-6 rounded-2xl shadow-xl transition-all duration-200 active:scale-95 cursor-pointer border-t border-emerald-300/40">
+                    
+                    <!-- Ícono SVG Oficial de WhatsApp -->
+                    <svg class="w-8 h-8 sm:w-9 sm:h-9 fill-current shrink-0 transition-transform duration-200 group-hover:rotate-12" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.758.459 3.473 1.332 4.986L2 22l5.205-1.365a9.932 9.932 0 0 0 4.826 1.246h.004c5.515 0 9.969-4.453 9.969-9.969 0-2.663-1.037-5.166-2.92-7.049A9.903 9.903 0 0 0 12.031 2zm5.821 14.274c-.244.687-1.418 1.314-1.964 1.396-.503.075-1.139.107-1.838-.115-.424-.134-.968-.314-1.663-.614-2.922-1.262-4.831-4.205-4.977-4.4-.146-.195-1.188-1.58-1.188-3.014 0-1.434.751-2.139 1.018-2.431.267-.292.583-.365.777-.365.195 0 .389.002.559.01.179.009.419-.068.656.501.244.584.827 2.019.9 2.165.073.146.122.316.024.511-.097.195-.146.316-.292.487-.146.17-.307.38-.438.511-.146.146-.298.304-.128.596.17.292.756 1.247 1.624 2.02 1.116.995 2.057 1.304 2.349 1.45.292.146.462.122.633-.073.17-.195.73-.852.924-1.144.195-.292.389-.244.656-.146.267.097 1.701.803 1.993.949.292.146.487.219.559.341.073.122.073.706-.171 1.393z"/>
+                    </svg>
+                    
+                    <span class="tracking-wide">CREA TU USUARIO</span>
+                </a>
+            </div>
+
+            <!-- 4. TEXTO DEBAJO DEL BOTÓN: SIN LIMITE DE RETIRO -->
+            <div class="mt-6 flex items-center justify-center gap-2 text-zinc-200">
+                <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <p class="font-display font-extrabold text-base sm:text-lg tracking-wider uppercase text-zinc-100">
+                    SIN LIMITE DE RETIRO
+                </p>
+            </div>
+
         </div>
 
-        <!-- Descripción / Quote -->
-        <p class="text-lg sm:text-xl text-gray-100 font-medium leading-relaxed mb-8 px-2">
-            ¡Tenés 20% extra en tu primera carga! Decime tu nombre y te creo un usuario 🎁
-        </p>
-
-        <!-- WhatsApp CTA Button -->
-        <a href="https://wa.me/5491125748443?text=Hola,%20quiero%20mi%20bono%20de%20bienvenida" 
-           target="_blank"
-           rel="noopener noreferrer"
-           class="w-full btn-whatsapp rounded-2xl py-4 px-6 flex items-center justify-center space-x-3 text-white font-bold text-lg sm:text-xl tracking-wide uppercase cursor-pointer hover:brightness-110 active:scale-95 transition-all duration-200">
-            <i class="fa-brands fa-whatsapp text-3xl"></i>
-            <span>Quiero mi bono de bienvenida</span>
-        </a>
-
-        <!-- Footer discreto -->
-        <footer class="mt-12 text-xs text-gray-500 font-medium">
-            <p>© Ases del Norte - Todos los derechos reservados</p>
-        </footer>
+        <!-- Badges de confianza inferiores -->
+        <div class="mt-8 grid grid-cols-3 gap-3 w-full text-center text-xs text-zinc-400">
+            <div class="bg-zinc-900/40 border border-zinc-800/60 rounded-xl p-3 flex flex-col items-center justify-center gap-1">
+                <span class="text-amber-400 font-bold text-sm">⚡ Rápido</span>
+                <span>Carga al instante</span>
+            </div>
+            <div class="bg-zinc-900/40 border border-zinc-800/60 rounded-xl p-3 flex flex-col items-center justify-center gap-1">
+                <span class="text-emerald-400 font-bold text-sm">🔒 Seguro</span>
+                <span>Pagos directos</span>
+            </div>
+            <div class="bg-zinc-900/40 border border-zinc-800/60 rounded-xl p-3 flex flex-col items-center justify-center gap-1">
+                <span class="text-sky-400 font-bold text-sm">💬 Soporte</span>
+                <span>24hs online</span>
+            </div>
+        </div>
 
     </main>
 
+    <!-- Footer discreto -->
+    <footer class="relative z-10 w-full py-4 px-4 text-center text-xs text-zinc-500">
+        <p>Solo para mayores de 18 años. Jugá con responsabilidad.</p>
+    </footer>
+
+    <!-- Script de seguimiento de eventos para Meta Pixel -->
+    <script>
+        function trackWhatsAppClick() {
+            try {
+                if (typeof fbq === 'function') {
+                    // Registra el evento estándar 'Contact' y 'Lead' al hacer clic en el botón de WhatsApp
+                    fbq('track', 'Contact', {
+                        content_name: 'Boton WhatsApp Crea Tu Usuario',
+                        value: 0.00,
+                        currency: 'ARS'
+                    });
+                    fbq('track', 'Lead');
+                }
+            } catch (error) {
+                console.error('Error al registrar evento en Meta Pixel:', error);
+            }
+        }
+    </script>
 </body>
 </html>
